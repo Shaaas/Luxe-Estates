@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUXE | Modern Real Estate</title>
+    <title>LUXE | Modern Real Estate Portfolio</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -13,6 +13,7 @@
         <div class="logo">LUXE<span>ESTATES</span></div>
         <ul class="nav-links">
             <li><a href="#properties">Properties</a></li>
+            <li><a href="#gallery">Gallery</a></li>
             <li><a href="#calculator">Mortgage Tool</a></li>
             <li><a href="#" class="nav-btn" id="openModal">Schedule View</a></li>
         </ul>
@@ -60,9 +61,34 @@
                     <p class="location">Bel Air, California</p>
                     <div class="price-row">
                         <span class="price">$12,500,000</span>
-                        <a href="#" class="view-link inquiry-trigger">Inquire</a>
+                        <a href="#" class="view-link inquiry-trigger">View Details</a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery" class="section reveal">
+        <div class="section-title">
+            <h2>Lifestyle Portfolio</h2>
+            <div class="line"></div>
+        </div>
+        <div class="gallery-grid">
+            <div class="gallery-item large">
+                <img src="https://images.unsplash.com/photo-1600607687940-47a04b629733?auto=format&fit=crop&w=1200&q=80" alt="Living Room">
+                <div class="overlay"><span>Grand Living Space</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?auto=format&fit=crop&w=800&q=80" alt="Pool">
+                <div class="overlay"><span>Infinity Pool</span></div>
+            </div>
+            <div class="gallery-item">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Exterior">
+                <div class="overlay"><span>Modern Facade</span></div>
+            </div>
+            <div class="gallery-item tall">
+                <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?auto=format&fit=crop&w=800&q=80" alt="Kitchen">
+                <div class="overlay"><span>Chef's Kitchen</span></div>
             </div>
         </div>
     </section>
@@ -98,14 +124,20 @@
         <div class="modal-content glass">
             <span class="close-modal">&times;</span>
             <h2>Exclusive Inquiry</h2>
+            <p>Connect with a private client advisor.</p>
             <form id="leadForm">
                 <input type="text" name="name" placeholder="Full Name" required>
                 <input type="email" name="email" placeholder="Email Address" required>
-                <textarea name="message" placeholder="I am interested in..."></textarea>
-                <button type="submit" class="btn-main">Send Portfolio Request</button>
+                <textarea name="message" placeholder="Property of interest..."></textarea>
+                <button type="submit" class="btn-main">Submit Inquiry</button>
             </form>
         </div>
     </div>
+
+    <footer>
+        <div class="logo">LUXE</div>
+        <p>&copy; 2026 Luxe Estates. Digital Agency Asset.</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
