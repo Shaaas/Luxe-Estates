@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LUXE | Modern Real Estate</title>
-    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -14,7 +14,7 @@
         <ul class="nav-links">
             <li><a href="#properties">Properties</a></li>
             <li><a href="#calculator">Mortgage Tool</a></li>
-            <li><a href="#contact" class="nav-btn">Schedule View</a></li>
+            <li><a href="#" class="nav-btn" id="openModal">Schedule View</a></li>
         </ul>
     </nav>
 
@@ -24,7 +24,7 @@
             <p class="reveal">Architectural masterpieces in the heart of the city.</p>
             <div class="search-bar glass reveal">
                 <input type="text" placeholder="Location...">
-                <select>
+                <select id="priceFilter">
                     <option>$1M - $3M</option>
                     <option>$3M - $10M</option>
                     <option>$10M+</option>
@@ -43,38 +43,24 @@
         <div class="property-grid">
             <div class="prop-card reveal">
                 <div class="prop-img">
-                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Modern Villa">
+                    <div class="slider-container" id="slider1">
+                        <div class="slider-track">
+                            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80" alt="Exterior">
+                            <img src="https://images.unsplash.com/photo-1600607687940-47a04b629733?auto=format&fit=crop&w=800&q=80" alt="Interior">
+                            <img src="https://images.unsplash.com/photo-1600566753190-17f0bb2a6c3e?auto=format&fit=crop&w=800&q=80" alt="Pool">
+                        </div>
+                        <button class="slider-btn prev" onclick="moveSlider('slider1', -1)">&#10094;</button>
+                        <button class="slider-btn next" onclick="moveSlider('slider1', 1)">&#10095;</button>
+                        <div class="slider-dots"></div>
+                    </div>
                     <div class="tag">FOR SALE</div>
                 </div>
                 <div class="prop-info">
                     <h3>The Glass House</h3>
                     <p class="location">Bel Air, California</p>
-                    <div class="stats">
-                        <span><i class="fas fa-bed"></i> 5 Beds</span>
-                        <span><i class="fas fa-bath"></i> 7 Baths</span>
-                    </div>
                     <div class="price-row">
                         <span class="price">$12,500,000</span>
-                        <a href="#" class="view-link">View Details</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="prop-card reveal">
-                <div class="prop-img">
-                    <img src="https://images.unsplash.com/photo-1600607687940-47a04b629733?auto=format&fit=crop&w=800&q=80" alt="Sky Penthouse">
-                    <div class="tag">FOR SALE</div>
-                </div>
-                <div class="prop-info">
-                    <h3>Azure Penthouse</h3>
-                    <p class="location">Manhattan, NY</p>
-                    <div class="stats">
-                        <span>3 Beds</span>
-                        <span>4 Baths</span>
-                    </div>
-                    <div class="price-row">
-                        <span class="price">$8,200,000</span>
-                        <a href="#" class="view-link">View Details</a>
+                        <a href="#" class="view-link inquiry-trigger">Inquire</a>
                     </div>
                 </div>
             </div>
@@ -84,11 +70,10 @@
     <section id="calculator" class="calc-section reveal">
         <div class="calc-container glass">
             <h2>Mortgage Calculator</h2>
-            <p>Estimate your monthly investment.</p>
             <div class="calc-grid">
                 <div class="input-group">
                     <label>Property Price ($)</label>
-                    <input type="number" id="price" value="1000000">
+                    <input type="number" id="price" value="12500000">
                 </div>
                 <div class="input-group">
                     <label>Interest Rate (%)</label>
@@ -109,15 +94,18 @@
         </div>
     </section>
 
-    <footer id="contact">
-        <div class="footer-content">
-            <div class="footer-logo">LUXE</div>
-            <p>Your journey to luxury living starts here.</p>
-            <div class="socials">
-                <a href="#">Instagram</a> | <a href="#">LinkedIn</a>
-            </div>
+    <div id="contactModal" class="modal-overlay">
+        <div class="modal-content glass">
+            <span class="close-modal">&times;</span>
+            <h2>Exclusive Inquiry</h2>
+            <form id="leadForm">
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <textarea name="message" placeholder="I am interested in..."></textarea>
+                <button type="submit" class="btn-main">Send Portfolio Request</button>
+            </form>
         </div>
-    </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
