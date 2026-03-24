@@ -3,28 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LUXE | Modern Real Estate Portfolio</title>
+    <title>LUXE | Luxury Property Catalog</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Navbar -->
     <nav class="navbar">
         <div class="logo">LUXE<span>ESTATES</span></div>
         <ul class="nav-links">
             <li><a href="#properties">Properties</a></li>
             <li><a href="#gallery">Gallery</a></li>
             <li><a href="#calculator">Mortgage Tool</a></li>
-            <li><a href="#" class="nav-btn" id="openModal">Schedule View</a></li>
+            <li><a href="#" class="nav-btn" id="openModal">Schedule Viewing</a></li>
         </ul>
     </nav>
 
+    <!-- Hero -->
     <section class="hero">
         <div class="hero-content">
-            <h1 class="reveal">Find Your <span>Sanctuary.</span></h1>
-            <p class="reveal">Architectural masterpieces in the heart of the city.</p>
+            <h1 class="reveal">Find Your <span>Sanctuary</span></h1>
+            <p class="reveal">Luxury properties curated for the discerning buyer.</p>
             <div class="search-bar glass reveal">
-                <input type="text" placeholder="Location...">
+                <input type="text" placeholder="Search by location...">
                 <select id="priceFilter">
                     <option>$1M - $3M</option>
                     <option>$3M - $10M</option>
@@ -35,14 +37,57 @@
         </div>
     </section>
 
+    <!-- Filters (e-commerce style) -->
+    <section class="filters section reveal">
+        <div class="filter-row">
+            <div class="filter-group">
+                <label>Type</label>
+                <select id="typeFilter">
+                    <option>All</option>
+                    <option>Villa</option>
+                    <option>Condo</option>
+                    <option>Penthouse</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Bedrooms</label>
+                <select id="bedFilter">
+                    <option>Any</option>
+                    <option>1+</option>
+                    <option>2+</option>
+                    <option>3+</option>
+                    <option>4+</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Bathrooms</label>
+                <select id="bathFilter">
+                    <option>Any</option>
+                    <option>1+</option>
+                    <option>2+</option>
+                    <option>3+</option>
+                </select>
+            </div>
+            <div class="filter-group">
+                <label>Sort By</label>
+                <select id="sortFilter">
+                    <option>Newest</option>
+                    <option>Price: Low → High</option>
+                    <option>Price: High → Low</option>
+                </select>
+            </div>
+        </div>
+    </section>
+
+    <!-- Properties Section -->
     <section id="properties" class="section">
         <div class="section-title reveal">
             <h2>Featured Listings</h2>
             <div class="line"></div>
         </div>
-        
         <div class="property-grid">
-            <div class="prop-card reveal">
+            <!-- Property Card -->
+            <div class="prop-card reveal" data-type="Villa" data-bed="4" data-bath="5" data-price="12500000">
                 <div class="prop-img">
                     <div class="slider-container" id="slider1">
                         <div class="slider-track">
@@ -54,7 +99,10 @@
                         <button class="slider-btn next" onclick="moveSlider('slider1', 1)">&#10095;</button>
                         <div class="slider-dots"></div>
                     </div>
-                    <div class="tag">FOR SALE</div>
+                    <div class="prop-tags">
+                        <span>Hot Listing</span>
+                        <span>Luxury</span>
+                    </div>
                 </div>
                 <div class="prop-info">
                     <h3>The Glass House</h3>
@@ -68,6 +116,7 @@
         </div>
     </section>
 
+    <!-- Gallery Section -->
     <section id="gallery" class="section reveal">
         <div class="section-title">
             <h2>Lifestyle Portfolio</h2>
@@ -93,6 +142,7 @@
         </div>
     </section>
 
+    <!-- Mortgage Calculator -->
     <section id="calculator" class="calc-section reveal">
         <div class="calc-container glass">
             <h2>Mortgage Calculator</h2>
@@ -120,6 +170,7 @@
         </div>
     </section>
 
+    <!-- Modal -->
     <div id="contactModal" class="modal-overlay">
         <div class="modal-content glass">
             <span class="close-modal">&times;</span>
@@ -136,7 +187,7 @@
 
     <footer>
         <div class="logo">LUXE</div>
-        <p>&copy; 2026 Luxe Estates. Digital Agency Asset.</p>
+        <p>&copy; 2026 Luxe Estates. All Rights Reserved.</p>
     </footer>
 
     <script src="script.js"></script>
