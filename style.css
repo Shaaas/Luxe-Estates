@@ -17,6 +17,7 @@ body { font-family: 'Montserrat', sans-serif; background: var(--light); color: v
     background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px);
     transition: 0.4s;
 }
+.navbar.scrolled { box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
 .logo { font-family: 'Playfair Display'; font-size: 1.5rem; font-weight: bold; letter-spacing: 2px; }
 .logo span { color: var(--gold); }
 .nav-links { display: flex; list-style: none; align-items: center; }
@@ -39,6 +40,12 @@ body { font-family: 'Montserrat', sans-serif; background: var(--light); color: v
 .btn-main { background: var(--gold); border: none; padding: 15px 35px; color: white; cursor: pointer; font-weight: bold; text-transform: uppercase; transition: 0.3s; }
 .btn-main:hover { background: #b08d4a; transform: translateY(-2px); box-shadow: 0 10px 20px rgba(197, 160, 89, 0.3); }
 
+/* Filters */
+.filters { padding: 50px 8%; background: #f9f9f9; }
+.filter-row { display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; }
+.filter-group { display: flex; flex-direction: column; font-size: 0.9rem; }
+.filter-group select { padding: 10px 12px; border-radius: 3px; border: 1px solid #ccc; }
+
 /* Sections */
 .section { padding: 100px 8%; }
 .section-title { text-align: center; margin-bottom: 50px; }
@@ -46,7 +53,8 @@ body { font-family: 'Montserrat', sans-serif; background: var(--light); color: v
 
 /* Property Card & Slider */
 .property-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); gap: 40px; }
-.prop-card { background: white; transition: 0.4s; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+.prop-card { background: white; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; cursor: pointer; }
+.prop-card:hover { transform: translateY(-10px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
 .prop-img { position: relative; height: 300px; }
 .slider-container { position: relative; width: 100%; height: 100%; overflow: hidden; }
 .slider-track { display: flex; transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1); height: 100%; }
@@ -56,15 +64,20 @@ body { font-family: 'Montserrat', sans-serif; background: var(--light); color: v
 .slider-dots { position: absolute; bottom: 15px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; }
 .dot { width: 8px; height: 8px; background: rgba(255,255,255,0.5); border-radius: 50%; }
 .dot.active { background: var(--gold); width: 20px; border-radius: 10px; transition: 0.3s; }
-.tag { position: absolute; top: 20px; left: 20px; background: var(--gold); color: white; padding: 5px 15px; font-size: 0.7rem; font-weight: bold; z-index: 6; }
-.prop-info { padding: 25px; }
-.price-row { display: flex; justify-content: space-between; align-items: center; margin-top: 15px; }
+
+/* Property Tags */
+.prop-tags { position: absolute; top: 15px; left: 15px; display: flex; gap: 5px; }
+.prop-tags span { background: var(--gold); color: white; padding: 3px 10px; font-size: 0.7rem; border-radius: 3px; }
+
+/* Property Info */
+.prop-info { padding: 20px; }
+.price-row { display: flex; justify-content: space-between; align-items: center; margin-top: 10px; }
 .price { color: var(--gold); font-weight: bold; font-size: 1.2rem; }
 .view-link { text-decoration: none; color: var(--dark); font-weight: 600; font-size: 0.8rem; border-bottom: 2px solid var(--gold); }
 
-/* Magazine Gallery */
+/* Gallery */
 .gallery-grid { display: grid; grid-template-columns: repeat(4, 1fr); grid-auto-rows: 200px; gap: 15px; }
-.gallery-item { position: relative; overflow: hidden; border-radius: 4px; }
+.gallery-item { position: relative; overflow: hidden; border-radius: 4px; cursor: pointer; }
 .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: 0.8s; }
 .gallery-item.large { grid-column: span 2; grid-row: span 2; }
 .gallery-item.tall { grid-row: span 2; }
@@ -90,12 +103,14 @@ body { font-family: 'Montserrat', sans-serif; background: var(--light); color: v
 /* Footer */
 footer { padding: 50px 8%; text-align: center; background: #0a0a0a; color: #555; }
 
-/* Reveal Animation */
+/* Reveal Animations */
 .reveal { opacity: 0; transform: translateY(40px); transition: 1.2s ease; }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
+/* Responsive */
 @media (max-width: 768px) {
     .gallery-grid { grid-template-columns: repeat(2, 1fr); }
     .search-bar { flex-direction: column; }
     .hero h1 { font-size: 3rem; }
+    .filter-row { flex-direction: column; }
 }
